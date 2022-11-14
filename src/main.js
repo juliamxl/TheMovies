@@ -10,23 +10,27 @@ function apresentaFilme() {
     const url = `${BASE_URL}${id}?${API_KEY}&${language}`
 
     fetch(url)
-    .then(res => res.json())
+        .then(res => res.json())
         .then(data => {
-            infoFilme.innerHTML = `
+            if (data.status_code == 34) {
+               apresentaFilme()
+            } else {
+                infoFilme.innerHTML = 
+                `
                 <img class="filme-img" src="${IMG_URL + data.poster_path}" alt="">
                 <div class="text-film">
                     <h3>${data.title}</h3>
                     <p>${overView(data.overview)}</p>
                 </div>
                 `
-        })    
+            }
+        })
 }
 
-function overView(overview){
-    if(overview == ""){
+function overView(overview) {
+    if (overview == "") {
         return 'A sinopse do filme está indisponível.'
-    }else{
+    } else {
         return overview
     }
-
 }
