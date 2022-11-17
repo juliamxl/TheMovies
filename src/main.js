@@ -29,7 +29,6 @@ function apresentaFilme() {
             }
         })
 }
-
 function overView(overview) {
     if (overview == "") {
         return 'A sinopse do filme está indisponível.'
