@@ -17,7 +17,10 @@ function apresentaFilme() {
             } else {
                 infoFilme.innerHTML = 
                 `
-                <img class="filme-img" src="${IMG_URL + data.poster_path}" alt="">
+                <div class="img-nota">
+                    <img class="filme-img" src="${IMG_URL + data.poster_path}" alt="">
+                    <p>Nota: ${data.vote_average}</p>
+                </div>
                 <div class="text-film">
                     <h3>${data.title}</h3>
                     <p>${overView(data.overview)}</p>
