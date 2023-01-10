@@ -20,6 +20,7 @@
 }
 
 body {
+    overflow-y: hidden;
     background-color: var(--back);
     display: flex;
     justify-content: center;
@@ -80,8 +81,10 @@ body {
     border-radius: 12px;
     font-size: 20px;
 }
-
 @media (max-width: 945px){
+    body{
+        overflow-y:auto;
+    }
     .container{
         display: flex;
         flex-direction: column;
